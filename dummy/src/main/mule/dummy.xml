@@ -6,9 +6,6 @@
 http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
-	<db:config name="Database_Config" doc:name="Database Config" doc:id="eafa8ea1-7960-4cb2-a3af-e1ce5e0d97c3" >
-		<db:my-sql-connection host="mudb.learn.mulesoft.com" port="3306" user="mule" password="mule" database="training" />
-	</db:config>
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="0fcd2bc7-64ca-49b9-83ed-dac6ed236306" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
