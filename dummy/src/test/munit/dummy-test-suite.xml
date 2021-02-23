@@ -8,15 +8,26 @@
 		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
 		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
 	<munit:config name="dummy-test-suite.xml" />
-	<munit:test name="dummy-test-suite-dummyFlowTest" doc:id="8515acf4-2f05-4eb8-8cb9-5fd2202efdb6" description="Test">
+	<munit:test name="dummy-test-suite-dummyFlowTest1" doc:id="bb308d9e-8054-4aba-b195-03a4ee739829" description="Test">
 		<munit:execution >
-			<munit:set-event doc:name="Set Event" doc:id="29105197-868c-4af4-96ad-de586d2fc6dc" >
-				<munit:payload value='{&#10;	"cid": 100,&#10;	"firstName": "Bruce",&#10;	"lastName": "Wayne"&#10;}' mediaType="application/json" />
+			<munit:set-event doc:name="Set Event" doc:id="a85dd2f7-3e44-4cdc-be3e-5514784fed47" >
+				<munit:payload value='{&#10;	"cid": 100,&#10;	"firstName": "Kota",&#10;	"lastName": "Kashyap"&#10;}' mediaType="application/json" />
 			</munit:set-event>
-			<flow-ref doc:name="Flow-ref to dummyFlow" doc:id="92d702c7-709e-49b7-941b-0ccaa0d79d79" name="dummyFlow"/>
+			<flow-ref doc:name="Flow-ref to dummyFlow" doc:id="77083cdd-c3a9-45d0-a041-eebce54db0ac" name="dummyFlow"/>
 		</munit:execution>
 		<munit:validation >
-			<munit-tools:assert-that doc:name="Assert that" doc:id="f6efa909-bde1-468d-9af2-89c062392100" is="#[MunitTools::notNullValue()]" expression="#[payload]" message="payload cannot be null"/>
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="860367a5-97b4-42c2-8d37-0f04c8bdece9" actual="#[payload]" expected='#["Welcome! Kota Kashyap. Your customer id is 100"]' message="Not expected"/>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="dummy-test-suite-dummyFlowTest" doc:id="fe13f029-ead8-4f93-90f9-87e7e856dac1" description="Test">
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="356024d8-ff80-48cc-a7c4-b328cc4471a4">
+				<munit:payload value='{&#10;	"cid": 100,&#10;	"firstName": "Kota",&#10;	"lastName": "Kashyap"&#10;}' mediaType="application/json" />
+			</munit:set-event>
+			<flow-ref doc:name="Flow-ref to dummyFlow" doc:id="1d3603ca-3230-4dc1-8fe4-a6ac99b73902" name="dummyFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="b8cc7998-0d5c-4da5-8b2c-7962ff0dbddd" expression="#[payload]" is="#[MunitTools::notNullValue()]" message="Payload cant be Null"/>
 		</munit:validation>
 	</munit:test>
 
